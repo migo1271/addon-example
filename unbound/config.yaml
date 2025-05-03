@@ -1,0 +1,23 @@
+name: "Unbound DNS Server"
+description: "Ein Home Assistant OS Add-on mit Unbound als DNS-Server."
+version: "1.0.0"
+slug: "unbound_dns"
+# startup: "system"
+# boot: "auto"
+host_network: true
+host_dbus: true
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armv7
+  - armhf
+  - i386
+options: {}
+ports:
+  5335/udp: 53
+  5335/tcp: 53
+schema: {}
+map:
+  - "config:rw"
+# image: "ghcr.io/home-assistant/{arch}-addon-unbound"
