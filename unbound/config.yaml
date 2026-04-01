@@ -16,8 +16,8 @@ arch:
   - i386
 options: {}
 ports:
-  53/udp: 53
-  53/tcp: 53
+  5335/udp: 53
+  5335/tcp: 53
 schema: {}
 map:
   - "config:rw"
