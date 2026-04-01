@@ -1,7 +1,7 @@
 name: "Unbound DNS Server"
 description: "Ein Home Assistant OS Add-on mit Unbound als DNS-Server."
 url: https://github.com/migo1271/addon-example
-version: "1.0.0"
+version: "1.0.1"
 slug: "unbound_dns"
 # startup: "system"
 # boot: "auto"
@@ -16,8 +16,8 @@ arch:
   - i386
 options: {}
 ports:
-  5335/udp: 53
-  5335/tcp: 53
+  53/udp: 53
+  53/tcp: 53
 schema: {}
 map:
   - "config:rw"
