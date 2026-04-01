@@ -5,7 +5,7 @@ version: "1.0.1"
 slug: "unbound_dns"
 # startup: "system"
 # boot: "auto"
-host_network: true
+host_network: false
 host_dbus: true
 init: false
 arch:
