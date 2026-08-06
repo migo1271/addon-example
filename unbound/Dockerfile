@@ -2,7 +2,8 @@
 # variant of the base image. The add-on build system usually injects
 # BUILD_ARCH (e.g. "amd64", "armv7", "aarch64").
 ARG BUILD_ARCH
-ARG BUILD_FROM=ghcr.io/hassio-addons/base-${BUILD_ARCH}:latest
+ARG BUILD_FROM
+##=ghcr.io/hassio-addons/base-${BUILD_ARCH}:latest
 
 FROM ${BUILD_FROM}
 
