@@ -1,6 +1,6 @@
 name: "Unbound DNS Server"
 description: "Ein Home Assistant OS Add-on mit Unbound als DNS-Server."
-url: https://github.com/migo1271/ha-apps
+url: https://github.com/migo1271/ha-apps/unbound
 version: "1.0.3"
 slug: "unbound_dns"
 # startup: "system"
