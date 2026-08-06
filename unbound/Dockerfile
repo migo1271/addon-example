@@ -1,5 +1,5 @@
-ARG BUILD_FROM
-### ARG BUILD_FROM=ghcr.io/hassio-addons/base:latest
+# ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:latest
 FROM $BUILD_FROM
 #### FROM ghcr.io/home-assistant/base:latest
 RUN apk update
