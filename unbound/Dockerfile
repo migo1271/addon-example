@@ -1,13 +1,11 @@
-# ARG BUILD_FROM
 # Select the target architecture first so we can request the correct platform
 # variant of the base image. The add-on build system usually injects
 # BUILD_ARCH (e.g. "amd64", "armv7", "aarch64").
 ARG BUILD_ARCH
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:latest
-# Use the platform hint so the daemon/buildkit pulls the correct image for the
-# requested architecture (if the registry provides multi-arch manifests).
-FROM --platform=linux/${BUILD_ARCH} ${BUILD_FROM}
-#### FROM ghcr.io/home-assistant/base:latest
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/${BUILD_ARCH}:latest
+
+FROM ${BUILD_FROM}
+
 RUN apk update
 RUN apk upgrade
 RUN apk add --no-cache unbound
