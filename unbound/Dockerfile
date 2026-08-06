@@ -2,7 +2,7 @@
 # variant of the base image. The add-on build system usually injects
 # BUILD_ARCH (e.g. "amd64", "armv7", "aarch64").
 ARG BUILD_ARCH
-ARG BUILD_FROM=homeassistant/${BUILD_ARCH}-base:latest
+ARG BUILD_FROM=ghcr.io/home-assistant/base:latest
 ##=ghcr.io/hassio-addons/base-${BUILD_ARCH}:latest
 ##=homeassistant/aarch64-base:latest
 FROM ${BUILD_FROM}
