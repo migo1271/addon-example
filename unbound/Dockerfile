@@ -1,6 +1,12 @@
 # ARG BUILD_FROM
+# Select the target architecture first so we can request the correct platform
+# variant of the base image. The add-on build system usually injects
+# BUILD_ARCH (e.g. "amd64", "armv7", "aarch64").
+ARG BUILD_ARCH
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:latest
-FROM $BUILD_FROM
+# Use the platform hint so the daemon/buildkit pulls the correct image for the
+# requested architecture (if the registry provides multi-arch manifests).
+FROM --platform=linux/${BUILD_ARCH} ${BUILD_FROM}
 #### FROM ghcr.io/home-assistant/base:latest
 RUN apk update
 RUN apk upgrade
@@ -11,7 +17,6 @@ COPY unbound.conf /etc/unbound/unbound.conf
 CMD ["/usr/sbin/unbound", "-ddd", "-vvv"]
 
 # Build arguments
-ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_DESCRIPTION
 ARG BUILD_NAME
